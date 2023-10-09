@@ -1,0 +1,33 @@
+.Nummer{
+  font-family: 'Poppins';
+}
+.headline{
+  font-family: 'Poppins';
+}
+.input{
+  font-family: 'Poppins';
+  width: 60px;
+  height: 25px;
+}
+.set-btn{
+  font-family: 'Poppins';
+  width: 40px;
+  height: 30px;
+  background-color: rgb(0, 220, 0);
+  border-style: solid;
+  border-width: 0px;
+  cursor: pointer;
+}
+.set-btn:focus{
+  background-color: green;
+}
+.generate-btn{
+  margin-top: 2%;
+  font-family: 'Poppins';
+  background-color: white;
+  border-style: solid;
+  border-width: 0px;
+}
+.your-number{
+  font-family: 'Poppins';
+}

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/random-number.css">
+  <link rel="stylesheet" href="css/index.css">
+  <link rel="stylesheet" href="css/taschenrechner.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Zufallsgenerator</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://getbootstrap.com/docs/5.3/assets/css/docs.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  
+</head>
+<body style="background-color: rgb(54, 54, 54); color: white;">
+  <div class="navbar">
+    <div class="navbar-links">
+      <a href="index.html" style="font-size: 2.5vw;cursor: pointer; color: white; text-decoration: none;">Home</a>
+      
+    </div>
+    <div class="navbar-mitte">
+      Mein Portfolio
+    </div>
+    <div class="navbar-rechts">
+      <a href="projekte.html" style="cursor: pointer; color: white; text-decoration: none;">Projekte</a>
+      <a></a>
+    </div>
+    
+  </div>
+
+  <div class="taschenrechner" style="text-align: center;border-radius: 5%;border-width: 2px; border-style: solid; ">
+    <div class="container" style="" >
+      <h1 style="font-size: 3vw; margin-bottom: 5%;padding-top: 4%;">Taschenrechner</h1>
+      <input type="text" id="taschenrechner-field" style="text-align: right; margin-bottom: 3%; width: 80%; max-width: 600px;background-color: rgb(0, 99, 0); ">
+        <div class="taschenrechner-tasten">
+          <button class="buttons" onclick="addToField(1)">1</button>
+          <button class="buttons" onclick="addToField(2)">2</button>
+          <button class="buttons" onclick="addToField(3)">3</button>
+          <button class="buttons" onclick="plus()">+</button>
+          <button class="buttons" onclick="mal()">×</button>
+          <button class="buttons" onclick="addToField(4)">4</button>
+          <button class="buttons" onclick="addToField(5)">5</button>
+          <button class="buttons" onclick="addToField(6)">6</button>
+          <button class="buttons" onclick="minus()">-</button>
+          <button class="buttons" onclick="geteilt()">÷</button>
+          <button class="buttons" onclick="addToField(7)">7</button>
+          <button class="buttons" onclick="addToField(8)">8</button>
+          <button class="buttons" onclick="addToField(9)">9</button>
+          <button class="buttons" onclick="ergebnis()">=</button>
+          <button class="buttons" onclick="clearField()">C</button>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
+<script type="text/javascript">
+  var ersteReihe = ""; 
+
+  function addToField(figure){
+    var inputField = document.getElementById("taschenrechner-field");
+    inputField.value += figure;
+    ersteReihe += figure; 
+  } 
+
+  function plus(){
+    var inputField = document.getElementById("taschenrechner-field");
+    inputField.value += "+";
+  }
+  function minus(){
+    var inputField = document.getElementById("taschenrechner-field");
+    inputField.value += "-";
+  }
+  function mal(){
+    var inputField = document.getElementById("taschenrechner-field");
+    inputField.value += "*";
+  }
+  function geteilt(){
+    var inputField = document.getElementById("taschenrechner-field");
+    inputField.value += "/";
+  }
+
+  function ergebnis(){
+    var inputField = document.getElementById("taschenrechner-field");
+    inputField.value = eval(inputField.value); 
+  }
+  
+  function clearField() {
+    var inputField = document.getElementById("taschenrechner-field");
+    inputField.value = "";
+    }
+</script>

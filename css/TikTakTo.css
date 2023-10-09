@@ -1,0 +1,11 @@
+.TikTakTo-container{
+  background-color: white;
+  height: 600px;
+}
+
+
+.TikTakTo-grid{
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
+}
