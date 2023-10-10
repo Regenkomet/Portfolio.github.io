@@ -17,14 +17,14 @@
 <body style="background-color: rgb(54, 54, 54); color: white;">
   <div class="navbar">
     <div class="navbar-links">
-      <a href="index.html" style="font-size: 2.5vw;cursor: pointer; color: white; text-decoration: none;">Home</a>
+      <a href="index.html" style="font-size: 2vw;cursor: pointer; color: white; text-decoration: none;">Home</a>
       
     </div>
-    <div class="navbar-mitte">
+    <div class="navbar-mitte" style="font-size: 2vw;">
       Mein Portfolio
     </div>
     <div class="navbar-rechts">
-      <a href="projekte.html" style="cursor: pointer; color: white; text-decoration: none;">Projekte</a>
+      <a href="projekte.html" style="cursor: pointer; color: white; text-decoration: none; font-size: 2vw;">Projekte</a>
       <a></a>
     </div>
     
@@ -40,6 +40,7 @@
     <input class="input" id="input" placeholder="von 0 - ..."> 
     <button onclick="random()" class="set-btn">set</button></br>
     <button onclick="zufall()" class="generate-btn">generiere deine Zahl</button>
+    <p class="range-number" id="range-number"></p>
     <p class="your-number" id="deine-zahl"></p>
     </div>
 
@@ -51,13 +52,14 @@
     function random(){
       
       var rangeInt = document.getElementById('input').value;
-      
+      document.getElementById('range-number').innerHTML="Von 0 bis "+ rangeInt
     }
 
     function zufall(){
       var rangeInt = document.getElementById('input').value;
       var zahl = (getRandomInt(rangeInt));  
       document.getElementById('deine-zahl').innerHTML ="deine Zufällig generierte Zahl ist: "+ zahl
+      
     }
   </script>
 </body>
