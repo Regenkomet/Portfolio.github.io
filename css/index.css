@@ -31,8 +31,7 @@ body {
 
 
 .welcome-card{
-  display: grid;
-  grid-template-columns: 0.5fr 1fr;
+  display: flex;
   font-family: 'Poppins';
   color: white;
   border-radius: 10px;
