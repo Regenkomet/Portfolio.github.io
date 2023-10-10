@@ -10,7 +10,7 @@
   
   
 
-  font-size: 2vw;
+  font-size: 3vw;
 
 
   color: black;
@@ -18,11 +18,11 @@
 
 }
 .special-sale{
-  padding-top: 5%;
-  padding-bottom: 5%;
-  padding-left: 20%;
-  padding-right: 20%;
-  background-image: url(https://img.freepik.com/fotos-kostenlos/beagle-tricolor-welpen-posieren-suesse-weiss-braun-schwarze-huendchen-oder-haustiere-die-auf-grauem-hintergrund-spielen_155003-41849.jpg?w=996&t=st=1696949864~exp=1696950464~hmac=3a6390fa5d751ffd6121e09141ac86910169ae5c4e08e5b2dcb7ab801ae24c09);
+  padding-top: 3%;
+  padding-bottom: 3%;
+  padding-left: 10%;
+  padding-right: 10%;
+  background-image: url(https://www.freewebheaders.com/wp-content/gallery/dogs/cache/bernese-mountain-dog-in-swiss-alps-mountain-web-header.jpg-nggid044614-ngg0dyn-1280x720x100-00f0w010c010r110f110r010t010.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   align-items: center;
@@ -56,7 +56,7 @@
 }
 .img-size{
   
-  height: 15vw;
+  height: 25vw;
   
   
 }
@@ -150,7 +150,7 @@ color: red;
   color: white;
   padding: 1%;
   border-radius: 5%;
-
+  
 }
 
 
