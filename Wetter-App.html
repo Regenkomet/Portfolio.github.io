@@ -29,6 +29,8 @@
     </div>
   </div>
   
+  <h1 style="justify-content: center; display: flex;">Wetter App</h1>
+
   <div class="wetter-container">
   <input class="stadt-suche"  id="stadt" placeholder="Stadt">
   <img class="lupe" src="img/lupe (2).png" onclick="stadtSuche()">
@@ -56,7 +58,7 @@
       if (weather && weather.name && weather.main && weather.main.temp) {
         document.getElementById("city-name").innerHTML = weather.name;
         document.getElementById("city-temperature").innerHTML = weather.main.temp + "°C";
-        document.getElementById("city-felt-temperature").innerHTML = "Gefühlte Temperatur: " + weather.main.feels_like + "°C";
+        document.getElementById("city-felt-temperature").innerHTML = "gefühlte Temperatur: " + weather.main.feels_like + "°C";
         document.getElementById("city-humidity").innerHTML = + weather.main.humidity + "%";
         changePng(weather);
       } else {
