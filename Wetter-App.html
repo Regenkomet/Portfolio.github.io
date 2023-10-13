@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/wetter-app.css">
+  <link rel="stylesheet" href="css/index.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Zufallsgenerator</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://getbootstrap.com/docs/5.3/assets/css/docs.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  
+</head>
+<body style="background-color: rgb(54, 54, 54); color: white;">
+  <div class="navbar">
+    <div class="navbar-links">
+      <a href="index.html" style="font-size: 2vw;cursor: pointer; color: white; text-decoration: none;">Home</a>
+      
+    </div>
+    <div class="navbar-mitte" style="font-size: 2vw;">
+      Mein Portfolio
+    </div>
+    <div class="navbar-rechts">
+      <a href="projekte.html" style="cursor: pointer; color: white; text-decoration: none; font-size: 2vw;">Projekte</a>
+      <a></a>
+    </div>
+  </div>
+  
+  <div class="wetter-container">
+  <input class="stadt-suche"  id="stadt" placeholder="Stadt">
+  <img class="lupe" src="img/lupe (2).png" onclick="stadtSuche()">
+  <h1 style="margin-top: 3%;" id="city-name"></h1>
+   <img id="weather-icon" class="weather-icon" src=>
+  <div style="display: flex; justify-content: center; align-items: center; flex-direction: column;">
+    
+   <img id="icons" class="weather-condition2" src="weather-icons/thermometer.png">
+   <h1 style="font-size: 2.5Vw;" id="city-temperature"></h1>
+  </div>
+  <div style="display: flex; justify-content: center; align-items: center; flex-direction: column;">
+    <img id="icons2" class="weather-condition" src="weather-icons/humidity.png">
+    <h1 style="font-size: 2.5Vw;" id="city-humidity"></h1>
+  </div>
+  <div>
+  <p style="font-size: 2.5Vw; margin-top:5% ;" id="city-felt-temperature"></p>
+  </div>
+  
+  </div>
+</div>
+
+
+  <script>
+    function renderWeather(weather) {
+      if (weather && weather.name && weather.main && weather.main.temp) {
+        document.getElementById("city-name").innerHTML = weather.name;
+        document.getElementById("city-temperature").innerHTML = weather.main.temp + "°C";
+        document.getElementById("city-felt-temperature").innerHTML = "Gefühlte Temperatur: " + weather.main.feels_like + "°C";
+        document.getElementById("city-humidity").innerHTML = + weather.main.humidity + "%";
+        changePng(weather);
+      } else {
+        console.error('Error: Invalid weather data received');
+      }
+    }
+
+    function checkWeather(query) {
+      var url = `https://api.openweathermap.org/data/2.5/weather?q=${query}&units=metric&APPID=4ee2693620c838d5c03603e57b3fcd02`;
+
+      fetch(url)
+        .then((response) => response.json())
+        .then((data) => renderWeather(data))
+        .catch((error) => console.error('Error:', error));
+    }
+
+    function stadtSuche(){
+    var Stadt = document.getElementById("stadt").value
+    checkWeather(Stadt);
+    document.getElementById("icons").style.visibility = "visible";
+    document.getElementById("icons2").style.visibility = "visible";
+    
+  
+  }
+
+  function changePng(weather) {
+  var weatherIcon = document.getElementById('weather-icon');
+
+  if (weather.weather[0].main.toLowerCase() === "clear") {
+    weatherIcon.src = "weather-icons/sun.png";
+  } else if (weather.weather[0].main.toLowerCase() === "clouds") {
+    weatherIcon.src = "weather-icons/cloudy.png";
+  } else if (weather.weather[0].main.toLowerCase() === "rain") {
+    weatherIcon.src = "weather-icons/rain.png";
+  }
+}
+    
+  </script>
+</body>
+</html>
