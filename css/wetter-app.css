@@ -1,0 +1,52 @@
+.wetter-container{
+  background: rgb(34,193,195);
+  background: linear-gradient(0deg, rgba(34,193,195,1) 0%, rgba(0,35,128,1) 100%);
+border-color: white;
+  border-style: solid;
+  
+  margin-left: 20%;
+  margin-right: 20%;
+  
+  text-align: center;
+  padding: 2%;
+}
+.stadt-suche{
+  
+  background-color: initial;
+  max-width: 40%;
+  max-height: 25px;
+  width: 50%;
+  border-color: white;
+  color: white;
+  border-style: solid;
+}
+.lupe{
+  height: 20px;
+  color: black;
+  width: auto;
+  margin-left: 1%;
+  margin-bottom: 2px;
+  cursor: pointer;
+}
+.weather-icon{
+  height: 10vw;
+  
+}
+.weather-condition{
+  align-items: center;
+  
+  height: 2.5vw;
+ 
+}
+.weather-condition2{
+  align-items: center;
+  margin-top: 10px;
+  height: 2.5vw;
+ 
+}
+#icons{
+  visibility:hidden;
+}
+#icons2{
+  visibility: hidden;
+}
